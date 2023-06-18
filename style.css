@@ -2,7 +2,6 @@
 *::before,
 *::after {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -15,28 +14,44 @@ body {
   font-family: "Open-sans", sans-serif;
   background-color: gray;
   color: #fff;
+background-image: url("../assets/img_1.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .header {
-  margin-top: 1rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .header__img {
-  width: 6rem;
+  width: 6.3rem;
   height: auto;
   border-radius: 50%;
   border: 1px solid white;
   object-fit: cover;
   aspect-ratio: 1/1;
+  margin-bottom: 1rem;
 }
 
 .header__title {
-  font-size: 1.1rem;
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 5px 10px;
   border-radius: 20px;
-  background-color: #000;
-  padding: 0.3em ;
+  background-color: #000a;
+  border: 1px solid #fffa;
 }
 
+ul {
+  color: white;
+   list-style: none; 
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
