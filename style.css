@@ -19,13 +19,12 @@ body {
 
 .main {
   opacity: 0;
-  animation: fade-in 2.5s forwards;
-  animation-delay: 0.5s;
+  transition: opacity 3s linear;
+  transition-delay: 0.7s;
 }
 
-.main > li {
-  animation-delay: 0.5s;
-  animation: fade-in-item 2.5s ease-in-out; 
+.fade-in {
+  opacity: 1;
 }
 
 .header {
@@ -120,26 +119,3 @@ body {
     brightness(92%) contrast(92%);
 }
 
-/*---------------------- Keyframe ----------------------*/
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    filter: blur(10px); 
-  }
-
-  to {
-    opacity: 1;
-    filter: blur(0); 
-  }
-}
-
-@keyframes fade-in-item {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
