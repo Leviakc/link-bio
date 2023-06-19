@@ -19,11 +19,8 @@ body {
 
 .main {
   opacity: 0;
-  transition: opacity 2s linear;
-}
-
-.fade-in {
-  opacity: 1;
+  filter: blur(10px);
+  transition: opacity 2s ease-in-out, filter 2s ease-in-out;
 }
 
 .header {
