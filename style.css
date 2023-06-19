@@ -75,7 +75,7 @@ body {
   margin: 1.5rem 0;
   border-radius: 20rem;
 	overflow: hidden;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(
     10px
   ); 
