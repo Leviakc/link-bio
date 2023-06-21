@@ -7,5 +7,5 @@ document.addEventListener("DOMContentLoaded", function () {
     const main = document.querySelector(".main");
     main.style.filter = "blur(0px)";
     main.style.opacity = "1";
-  }, 1000);
+  }, 800);
 });
