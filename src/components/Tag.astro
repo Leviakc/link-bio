@@ -6,44 +6,29 @@ interface Props {
 	alt: string;
 }
 const { src, socialNetwork, href, alt } = Astro.props;
-
-// $$('img').forEach(img => {
-// const src = img.src
-// const [fileName] = src.split("/").reverse()
-// const [name] = fileName.split(".")
-
-// const a = document.createElement('a')
-// a.setAttribute('href', src)
-// a.setAttribute('download', name)
-//   a.click()
-// })
 ---
 
 <li class="nav--list">
-	<img src={src} alt={alt} class="logo" />
+	<img src={src} alt={alt} class:list={[alt, "logo"]} />
 	<a href={href} class="nav--list-link">
 		{socialNetwork}
 	</a>
 </li>
 <style>
-	li {
+	.nav--list {
 		background-color: #aaa7;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		margin: 1.5rem 0;
 		border-radius: 20rem;
-		overflow-y: scroll;
+		overflow: hidden;
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
 
 		&:hover {
 			background-color: #fff8;
 			cursor: pointer;
-		}
-
-		.logo {
-			width: 25px;
 		}
 
 		.nav--list-link {
@@ -55,7 +40,14 @@ const { src, socialNetwork, href, alt } = Astro.props;
 			padding: 0.9rem;
 			color: #eee;
 		}
+
+		.website {
+			filter: invert(100%) sepia(0%) saturate(7499%) hue-rotate(293deg)
+				brightness(103%) contrast(103%);
+		}
+
+		.logo {
+			width: 25px;
+		}
 	}
-	/* https://codepen.io/sosuke/pen/Pjoqqp */
-	/* https://isotropic.co/tool/hex-color-to-css-filter/ */
 </style>

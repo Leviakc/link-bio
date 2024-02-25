@@ -16,9 +16,9 @@ const socialTags = [
 		alt: "github",
 	},
 	{
-		socialNetwork: "Twitter",
+		socialNetwork: "Twitter ( X )",
 		href: "https://twitter.com/Gomen_jd",
-		img: "/assets/twitter.svg",
+		img: "/assets/x-logo.svg",
 		alt: "twitter",
 	},
 	{
@@ -27,22 +27,22 @@ const socialTags = [
 		img: "/assets/instagram.svg",
 		alt: "instagram",
 	},
-	{
-		socialNetwork: "My photos",
-		href: "https://www.instagram.com/gomenjuan/",
-		img: "/assets/instagram.svg",
-		alt: "instagram",
-	},
+	// {
+	// 	socialNetwork: "personal",
+	// 	href: "https://www.instagram.com/gomenjuan/",
+	// 	img: "/assets/instagram.svg",
+	// 	alt: "instagram",
+	// },
 	{
 		socialNetwork: "gomen",
 		href: "https://www.youtube.com/channel/UCmLKBUAhFbkaBSEY17vaehQ",
-		img: "/assets/youtube(1).svg",
+		img: "/assets/youtube.svg",
 		alt: "youtube",
 	},
 ];
 
 const profile = {
-	avatar: "/assets/loco.webp",
+	avatar: "/assets/profile_photo.webp",
 	username: "@gomen_jd",
 };
 ---
@@ -75,11 +75,16 @@ const profile = {
 
 	<style>
 		.main {
-			animation: blurTransition 1s 1;
+			animation: blurTransition 1.7s 1 ease-in;
 		}
 
 		@keyframes blurTransition {
 			0% {
+				opacity: 0;
+				filter: blur(10px);
+			}
+
+			40% {
 				opacity: 0;
 				filter: blur(10px);
 			}
