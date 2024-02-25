@@ -1,10 +1,133 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Tag from "../components/Tag.astro";
+
+const socialTags = [
+	{
+		socialNetwork: "Website",
+		href: "https://github.com/Leviakc",
+		img: "/assets/house-door-fill.svg",
+		alt: "website",
+	},
+	{
+		socialNetwork: "Github",
+		href: "https://github.com/Leviakc",
+		img: "/assets/github.svg",
+		alt: "github",
+	},
+	{
+		socialNetwork: "Twitter",
+		href: "https://twitter.com/Gomen_jd",
+		img: "/assets/twitter.svg",
+		alt: "twitter",
+	},
+	{
+		socialNetwork: "Instagram",
+		href: "https://www.instagram.com/juan_gomen/",
+		img: "/assets/instagram.svg",
+		alt: "instagram",
+	},
+	{
+		socialNetwork: "My photos",
+		href: "https://www.instagram.com/gomenjuan/",
+		img: "/assets/instagram.svg",
+		alt: "instagram",
+	},
+	{
+		socialNetwork: "gomen",
+		href: "https://www.youtube.com/channel/UCmLKBUAhFbkaBSEY17vaehQ",
+		img: "/assets/youtube(1).svg",
+		alt: "youtube",
+	},
+];
+
+const profile = {
+	avatar: "/assets/loco.webp",
+	username: "@gomen_jd",
+};
 ---
 
-<Layout title="Welcome to Astro.">
-	<main></main>
-</Layout>
+<Layout title="Juan gomen links">
+	<main class="main">
+		<header class="header">
+			<img
+				src={profile.avatar}
+				alt={profile.username}
+				class="header--img"
+			/>
+			<h1 class="header--title">{profile.username}</h1>
+		</header>
+		<nav class="nav">
+			<ul>
+				{
+					socialTags.map((socialTag) => (
+						<Tag
+							src={socialTag.img}
+							href={socialTag.href}
+							socialNetwork={socialTag.socialNetwork}
+							alt={socialTag.alt}
+						/>
+					))
+				}
+			</ul>
+		</nav>
+	</main>
 
-<style></style>
+	<style>
+		.main {
+			animation: blurTransition 1s 1;
+		}
+
+		@keyframes blurTransition {
+			0% {
+				opacity: 0;
+				filter: blur(10px);
+			}
+
+			100% {
+				opacity: 1;
+				filter: blur(0px);
+			}
+		}
+		.header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 3rem;
+
+			.header--img {
+				max-width: 250px;
+				width: 6rem;
+				height: auto;
+				aspect-ratio: 1/1;
+				border: 1px solid white;
+				border-radius: 50%;
+				object-fit: cover;
+				box-shadow: rgb(250 250 250 / 20%) 4px 4px 8px 0px;
+			}
+
+			.header--title {
+				margin-top: 1rem;
+				font-size: 1rem;
+				padding: 5px 10px;
+				border-radius: 20px;
+				background-color: #444a;
+				border: 1px solid #fffa;
+				box-shadow: rgb(250 250 250 / 24%) 0px 2px 8px 0px;
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+			}
+		}
+
+		.nav {
+			ul {
+				color: white;
+				list-style: none;
+				margin: 0 auto;
+				padding: 1.5rem;
+				font-size: 1.3rem;
+				max-width: 31rem;
+			}
+		}
+	</style>
+</Layout>

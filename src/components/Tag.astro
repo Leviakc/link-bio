@@ -1,0 +1,61 @@
+---
+interface Props {
+	src: string;
+	socialNetwork: string;
+	href: string;
+	alt: string;
+}
+const { src, socialNetwork, href, alt } = Astro.props;
+
+// $$('img').forEach(img => {
+// const src = img.src
+// const [fileName] = src.split("/").reverse()
+// const [name] = fileName.split(".")
+
+// const a = document.createElement('a')
+// a.setAttribute('href', src)
+// a.setAttribute('download', name)
+//   a.click()
+// })
+---
+
+<li class="nav--list">
+	<img src={src} alt={alt} class="logo" />
+	<a href={href} class="nav--list-link">
+		{socialNetwork}
+	</a>
+</li>
+<style>
+	li {
+		background-color: #aaa7;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 1.5rem 0;
+		border-radius: 20rem;
+		overflow-y: scroll;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+
+		&:hover {
+			background-color: #fff8;
+			cursor: pointer;
+		}
+
+		.logo {
+			width: 25px;
+		}
+
+		.nav--list-link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-decoration: none;
+			gap: 1.5rem;
+			padding: 0.9rem;
+			color: #eee;
+		}
+	}
+	/* https://codepen.io/sosuke/pen/Pjoqqp */
+	/* https://isotropic.co/tool/hex-color-to-css-filter/ */
+</style>
