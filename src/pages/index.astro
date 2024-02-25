@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Tag from "../components/Tag.astro";
+import { Image } from "astro:assets";
 
 const socialTags = [
 	{
@@ -50,11 +51,19 @@ const profile = {
 <Layout title="Juan gomen links">
 	<main class="main">
 		<header class="header">
-			<img
+			<Image
+				src={profile.avatar}
+				width="96"
+				height={96}
+				alt={profile.username}
+				loading="eager"
+				class="header--img"
+			/>
+			<!-- <img
 				src={profile.avatar}
 				alt={profile.username}
 				class="header--img"
-			/>
+			/> -->
 			<h1 class="header--title">{profile.username}</h1>
 		</header>
 		<nav class="nav">
