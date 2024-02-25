@@ -9,36 +9,34 @@ const { src, socialNetwork, href, alt } = Astro.props;
 ---
 
 <li class="nav--list">
-	<img src={src} alt={alt} class:list={[alt, "logo"]} />
 	<a href={href} class="nav--list-link">
-		{socialNetwork}
+		<img src={src} alt={alt} class:list={[alt, "logo"]} />
+		<p>
+			{socialNetwork}
+		</p>
 	</a>
 </li>
 <style>
-	.nav--list {
+	.nav--list a {
 		background-color: #aaa7;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin: 1.5rem 0;
+		margin: 1.5rem auto;
 		border-radius: 20rem;
+
+		padding: 0.9rem;
 		overflow: hidden;
 		backdrop-filter: blur(10px);
+		text-decoration: none;
+		gap: 1rem;
+		padding: 0.9rem;
+		color: #eee;
 		-webkit-backdrop-filter: blur(10px);
 
 		&:hover {
 			background-color: #fff8;
 			cursor: pointer;
-		}
-
-		.nav--list-link {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			text-decoration: none;
-			gap: 1.5rem;
-			padding: 0.9rem;
-			color: #eee;
 		}
 
 		.website {
