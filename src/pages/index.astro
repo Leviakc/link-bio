@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 const socialTags = [
 	{
 		socialNetwork: "Website",
-		href: "https://github.com/Leviakc",
+		href: "https://gomen-portfolio.deno.dev/",
 		img: "/assets/house-door-fill.svg",
 		alt: "website",
 	},
@@ -48,7 +48,7 @@ const profile = {
 };
 ---
 
-<Layout title="Juan gomen links">
+<Layout title="Juan gomen links" description="My links to my social medias so I can reach out to more people">
 	<main class="main">
 		<header class="header">
 			<Image
@@ -59,11 +59,6 @@ const profile = {
 				loading="eager"
 				class="header--img"
 			/>
-			<!-- <img
-				src={profile.avatar}
-				alt={profile.username}
-				class="header--img"
-			/> -->
 			<h1 class="header--title">{profile.username}</h1>
 		</header>
 		<nav class="nav">
