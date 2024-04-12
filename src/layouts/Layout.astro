@@ -4,7 +4,7 @@ interface Props {
 	description: string;
 }
 
-const { title, description} = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,7 +13,21 @@ const { title, description} = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="keywords" content="astro, social-media, gomen_jd, linktree"/>
+		<meta
+			name="keywords"
+			content="astro, social-media, gomen_jd, linktree"
+		/>
+		<meta property="og:url" content="https://gomen.bio/" />
+		<meta property="og:type" content="" />
+		<meta
+			property="og:title"
+			content={title}
+		/>
+		<meta
+			property="og:description"
+			content={description}
+		/>
+		<meta property="og:image" />
 		<link
 			rel="icon"
 			type="image/svg+xml"
